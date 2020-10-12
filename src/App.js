@@ -11,6 +11,7 @@ const onSubmit=()=>{
     setname((newitems) =>{
         return [...newitems, fullname]
     })
+    setfullname('')
 }
 
 
