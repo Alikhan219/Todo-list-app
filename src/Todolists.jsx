@@ -7,7 +7,10 @@ const Todolists =(props)=>{
  return(
      <>
     <div className="todo_style">
-    <i class="fas fa-times"></i>
+    <i className="fas fa-times"
+    onClick={()=>{
+        props.onSelect(props.id)
+    }}></i>
     <li>{props.text}</li>
     </div>
     </>)

@@ -13,7 +13,13 @@ const App = () => {
         })
         setfullname('')
     }
-
+    const deleteTimes=(id)=>{
+        setname((newitems)=>{
+           return newitems.filter((arrelem,index)=>{
+               return index !== id;
+           })
+       })
+    }
 
     return (
         <>
@@ -26,9 +32,12 @@ const App = () => {
                     <button onClick={onSubmit} > + </button>
                     <ol>
 
-                        {name.map((itemval) => {
+                        {name.map((itemval, index) => {
                             return <Todolists
+                                key={index}
+                                id={index}
                                 text={itemval}
+                                onSelect={deleteTimes}
                             />
                         })}
                     </ol>
